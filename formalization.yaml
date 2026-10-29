@@ -9,7 +9,10 @@ project:
     sharpness: for every Δ the Shannon triangle (three vertices with ⌊Δ/2⌋, ⌊Δ/2⌋ and ⌈Δ/2⌉
     parallel edges between the three pairs) has maximum degree at most Δ and no proper edge
     colouring with fewer than ⌊3Δ/2⌋ colours. Multigraphs are edge families ends : ι → V × V
-    (parallel edges allowed). Mathlib has no multigraphs and neither result.
+    (parallel edges allowed), a lighter representation than Mathlib's multigraph structure Graph α β
+    (Mathlib.Combinatorics.Graph.Basic: vertex and edge sets with an incidence relation IsLink),
+    which at the pinned revision has no degrees or edge colourings; no bridge to Graph α β is
+    proved. Neither result is in Mathlib.
   authors:
     - "Juan Pablo Traverso Gianini"
   license: "Apache-2.0"
@@ -85,7 +88,10 @@ fidelity:
   divergences: >-
     A multigraph is an indexed family of edges ends : ι → V × V on finite types; loops are
     excluded by the hypothesis (ends i).1 ≠ (ends i).2, and parallel edges are distinct indices
-    with the same ends. The degree counts incident edge indices. Colours are Fin k.
+    with the same ends. The degree counts incident edge indices. Colours are Fin k. Mathlib's
+    multigraph structure Graph α β (vertex and edge sets with an incidence relation IsLink,
+    loops and parallel edges allowed) is not used: at the pinned revision it has no degree or
+    edge-colouring notions, and no correspondence with the edge-family representation is proved.
 
 review:
   status: "agent-reviewed"

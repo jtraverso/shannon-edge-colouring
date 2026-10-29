@@ -1,7 +1,9 @@
 # Mathlib definitions used in Challenge.lean (Shannon's theorem)
 
 The statements in `Challenge.lean` define their own multigraph notions (`Incident`, `degree`,
-`IsProperEdgeColouring`; Mathlib has no multigraphs) and otherwise use only basic notions: `Fin`,
+`IsProperEdgeColouring` on an edge family `ends : ι → V × V`; Mathlib's multigraph structure
+`Graph α β` in `Mathlib.Combinatorics.Graph.Basic` is not used, since at this revision it has no
+degrees or edge colourings) and otherwise use only basic notions: `Fin`,
 products, `Finset.univ`, `Finset.filter`, `Finset.card` and `Fintype`. Verbatim excerpts at the
 pinned Mathlib revision `c55e6e786f49471c72fbddbec5415808896aec1e` (tag `v4.35.0-rc3`, repository
 https://github.com/leanprover-community/mathlib4; Apache-2.0):

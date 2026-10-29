@@ -5,7 +5,7 @@ Author and maintainer: **Juan Pablo Traverso Gianini**. Licence: Apache-2.0 (see
 C. E. Shannon, *A theorem on coloring the lines of a network*, J. Math. Phys. 28 (1949) 148–152,
 [doi:10.1002/sapm1949281148](https://doi.org/10.1002/sapm1949281148): **every loopless multigraph
 of maximum degree at most `Δ` has a proper edge colouring with `⌊3Δ/2⌋` colours**, and the bound is
-attained by the Shannon triangle. Mathlib has no multigraphs and neither result.
+attained by the Shannon triangle. Neither result is in Mathlib.
 
 | Lean (namespace `ShannonTheorem`) | Statement |
 |---|---|
@@ -14,6 +14,14 @@ attained by the Shannon triangle. Mathlib has no multigraphs and neither result.
 
 A finite multigraph is an edge family `ends : ι → V × V` (parallel edges allowed); `degree` counts
 incident edges and a proper edge colouring gives edges sharing an endpoint different colours.
+
+Mathlib does have multigraphs: `Graph α β` in `Mathlib.Combinatorics.Graph.Basic` has a vertex set,
+an edge set and an incidence relation `IsLink e x y`, and allows loops and parallel edges. At the
+pinned revision it has no degree or edge-colouring notions, so this project does not build on it:
+the statements use the edge family above, on finite types with the whole types as vertex and edge
+sets. A loopless `G : Graph α β` with finite vertex and edge sets corresponds to such a family
+(edges of `G.edgeSet` as indices, each sent to its two ends), but no bridge to `Graph` is proved
+here.
 
 ## Files
 

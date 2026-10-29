@@ -20,8 +20,11 @@ colours, and the bound is attained. Statements in the namespace `ShannonTheorem`
   most `Δ` with no proper edge colouring with fewer than `⌊3Δ/2⌋` colours.
 
 A finite multigraph on `V` is an edge family `ends : ι → V × V` (parallel edges allowed); it is
-loopless when every edge has distinct ends. Mathlib has no multigraphs; the Mathlib definitions
-used are reproduced in `MATHLIB_DEFINITIONS.md`.
+loopless when every edge has distinct ends. Mathlib's own multigraphs, `Graph α β` in
+`Mathlib.Combinatorics.Graph.Basic` (vertex and edge sets with an incidence relation `IsLink`), have
+no degrees or edge colourings at the pinned revision, so the statements use this lighter
+edge-family representation on finite types; the Mathlib definitions used are reproduced in
+`MATHLIB_DEFINITIONS.md`.
 -/
 
 @[expose] public section
